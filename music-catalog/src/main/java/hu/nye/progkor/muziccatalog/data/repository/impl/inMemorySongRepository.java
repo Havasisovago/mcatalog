@@ -19,10 +19,9 @@ public class inMemorySongRepository implements Repository<Song, Long> {
         STORAGE.put(id,song);
         return STORAGE.get(id);
     }
-
     @Override
-    public Song getById(Long id) {
-        return STORAGE.get(id);
+    public Optional<Song> getById(Long id) {
+        return Optional.ofNullable(STORAGE.get(id));
     }
 
     @Override
@@ -33,14 +32,12 @@ public class inMemorySongRepository implements Repository<Song, Long> {
     @Override
     public Song update(Song song) {
         Long id = song.getId();
-        STORAGE.put(id,song);
+        STORAGE.put(id, song);
         return STORAGE.get(id);
-
     }
 
     @Override
     public void deleteById(Long id) {
         STORAGE.remove(id);
-
     }
 }
