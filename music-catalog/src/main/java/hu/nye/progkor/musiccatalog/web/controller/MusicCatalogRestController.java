@@ -1,14 +1,25 @@
-package hu.nye.progkor.muziccatalog.web.controller;
+package hu.nye.progkor.musiccatalog.web.controller;
 
 import java.util.List;
+import java.util.Optional;
 
-import hu.nye.progkor.muziccatalog.data.model.Song;
-import hu.nye.progkor.muziccatalog.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-**
-        * A REST controller for managing songs in the music catalog.
-        */
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import hu.nye.progkor.musiccatalog.data.model.Song;
+import hu.nye.progkor.musiccatalog.service.SongService;
+
+/**
+ * A REST controller for managing songs in the music catalog.
+ */
 @RestController
 @RequestMapping("/api/v1/song")
 public class MusicCatalogRestController {

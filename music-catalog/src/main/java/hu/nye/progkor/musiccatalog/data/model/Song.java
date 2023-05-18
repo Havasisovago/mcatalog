@@ -1,15 +1,20 @@
-package hu.nye.progkor.muziccatalog.data.model;
+package hu.nye.progkor.musiccatalog.data.model;
+
+import java.util.Objects;
 
 /**
  * Model class for songs.
  */
-
 public class Song {
+
     private Long id;
     private String title;
     private String artist;
     private String album;
     private Genre genre;
+
+    public Song() {
+    }
 
     public Song(Long id, String title, String artist, String album, Genre genre) {
         this.id = id;
@@ -61,15 +66,27 @@ public class Song {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Song song = (Song) o;
 
-        if (id != null ? !id.equals(song.id) : song.id != null) return false;
-        if (title != null ? !title.equals(song.title) : song.title != null) return false;
-        if (artist != null ? !artist.equals(song.artist) : song.artist != null) return false;
-        if (album != null ? !album.equals(song.album) : song.album != null) return false;
+        if (!Objects.equals(id, song.id)) {
+            return false;
+        }
+        if (!Objects.equals(title, song.title)) {
+            return false;
+        }
+        if (!Objects.equals(artist, song.artist)) {
+            return false;
+        }
+        if (!Objects.equals(album, song.album)) {
+            return false;
+        }
         return genre == song.genre;
     }
 
@@ -85,12 +102,12 @@ public class Song {
 
     @Override
     public String toString() {
-        return "Song{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", artist='" + artist + '\'' +
-                ", album='" + album + '\'' +
-                ", genre=" + genre +
-                '}';
+        return "Song{"
+                + "id=" + id
+                + ", title='" + title + '\''
+                + ", artist='" + artist + '\''
+                + ", album='" + album + '\''
+                + ", genre=" + genre
+                + '}';
     }
 }

@@ -1,10 +1,10 @@
-package hu.nye.progkor.muziccatalog;
+package hu.nye.progkor.musiccatalog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MuzicCatalogApplicationTests {
+class MusicCatalogApplicationTests {
 
 	@Test
 	void contextLoads() {

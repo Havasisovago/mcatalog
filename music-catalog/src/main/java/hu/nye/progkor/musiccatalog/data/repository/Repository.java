@@ -1,7 +1,8 @@
-package hu.nye.progkor.muziccatalog.data.repository;
+package hu.nye.progkor.musiccatalog.data.repository;
 
 import java.util.List;
 import java.util.Optional;
+
 /**
  * A generic interface for managing entities in a repository.
  *

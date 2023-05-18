@@ -1,4 +1,4 @@
-package hu.nye.progkor.muziccatalog.data.model;
+package hu.nye.progkor.musiccatalog.data.model;
 
 public enum Genre {
     POP,

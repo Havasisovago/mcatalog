@@ -1,21 +1,23 @@
-package hu.nye.progkor.muziccatalog.service.impl;
+package hu.nye.progkor.musiccatalog.service.impl;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.mockito.ArgumentMatchers.anySet;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 import java.util.List;
+import java.util.Optional;
 
-import hu.nye.progkor.muziccatalog.data.model.Genre;
-import hu.nye.progkor.muziccatalog.data.model.Song;
-import hu.nye.progkor.muziccatalog.data.repository.Repository;
-import hu.nye.progkor.muziccatalog.service.SongService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import hu.nye.progkor.musiccatalog.data.model.Genre;
+import hu.nye.progkor.musiccatalog.data.model.Song;
+import hu.nye.progkor.musiccatalog.data.repository.Repository;
+import hu.nye.progkor.musiccatalog.service.SongService;
 
 /**
  * Unit tests for {@link DefaultSongService}.

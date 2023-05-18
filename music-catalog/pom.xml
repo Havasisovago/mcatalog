@@ -29,6 +29,9 @@
 		<coverage.branchLimit>60%</coverage.branchLimit>
 		<coverage.lineLimit>60%</coverage.lineLimit>
 		<coverage.type>BUNDLE</coverage.type>
+
+		<sonar.organization>zoltan-pal</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<dependencies>
@@ -189,3 +192,4 @@
 	</distributionManagement>
 
 </project>
+

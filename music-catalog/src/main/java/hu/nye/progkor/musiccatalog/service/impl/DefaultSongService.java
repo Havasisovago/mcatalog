@@ -1,18 +1,24 @@
-package hu.nye.progkor.muziccatalog.service.impl;
+package hu.nye.progkor.musiccatalog.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
-import hu.nye.progkor.muziccatalog.data.model.Song;
-import hu.nye.progkor.muziccatalog.data.repository.Repository;
-import hu.nye.progkor.muziccatalog.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import hu.nye.progkor.musiccatalog.data.model.Song;
+import hu.nye.progkor.musiccatalog.data.repository.Repository;
+import hu.nye.progkor.musiccatalog.service.SongService;
+
+/**
+ * Default implementation of {@link SongService}.
+ */
 @Service
 public class DefaultSongService implements SongService {
 
     private final Repository<Song, Long> songRepository;
-@Autowired
+
+    @Autowired
     public DefaultSongService(Repository<Song, Long> songRepository) {
         this.songRepository = songRepository;
     }
@@ -23,12 +29,12 @@ public class DefaultSongService implements SongService {
     }
 
     @Override
-    public Song retrieveSongById(Long id) {
+    public Optional<Song> retrieveSongById(Long id) {
         return songRepository.getById(id);
     }
 
     @Override
-    public List<Song> retrieveAllSong() {
+    public List<Song> retrieveAllSongs() {
         return songRepository.getAll();
     }
 
@@ -39,8 +45,6 @@ public class DefaultSongService implements SongService {
 
     @Override
     public void deleteSongById(Long id) {
-songRepository.deleteById(id);
+        songRepository.deleteById(id);
     }
-
-
 }
